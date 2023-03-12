@@ -1,0 +1,54 @@
+---
+title: "**Assignment 3: Data Visualization**"
+author: Mia Truong
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library('tidyverse')
+source("analysis.r")
+knitr::opts_chunk$set(echo = TRUE)
+```
+### **Introduction**
+
+In this A3 assignment, the _incarceration dataset_ across the U.S is examined and analyzed to learn more about the U.S jail population. The dataset is huge with observations and features recorded throughout decades. This dataset reports statistics of different races and groups of age in reference to jail and prison population. The topic of interest for this dataset is the **White jail population across the United States**. The analysis focuses on the total population of this race and the ratio of them compared to the total observations. This result would surprise the audiences as it breaks the stereotype of dominant race of jail population. 
+
+
+### **Summary Information:** 
+
+The first variable to analyze is the state with the highest population in the most recent year of the dataset, which is 2018. The answer was ```r highest_jail_state```. The second variable is the year with the highest jail population reported, which turns out to be ```r highest_jail_year```. The third variable is the total population of White people of all time across the U.S, it was calculated by `“dplyr”` to be ```r white_jail_total```. My fourth varible is the ratio of White people compared to the total population, which is surprisingly high at ```r white_to_total_ratio```. The last variable reported is the combined ratio of all other races compared to the total population. The result is ```r other_to_total_ratio```, and relatively lower than expected as this is the sum of all other races, just mostly double the White people ratio. The individual numbers are listed below: 
+
+The state with highest jail population is: ``r highest_jail_state``
+
+The year with highest jail population is: ``r highest_jail_year``
+
+The total jail population of White is: ``r white_jail_total``
+
+The ratio of White to total jail population is: ``r white_to_total_ratio``
+
+The ratio of all other races to total jail population is: ``r other_to_total_ratio``
+
+
+### **Map:** _Distribution of White jail population across the US_
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+map
+```
+
+In this U.S map, the of White jail population is displayed to show the **difference in distribution across the U.S**.  The boldest color demonstrates the significantly high population history of White at that state. And white color would inform the population that is at zero or very little. Based on the map, 4 states that have high population of White jail population are Texas, California, Florida and Pennsylvania. 
+
+
+### **Trend over Time Chart:** _Line Chart_
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+line_chart
+```
+
+With the line chart, it reflect the **trend over time of jail population among all races** with the emphasis of increasing trend over the years. From the chart, we can see that the trend might have its down but overall the trend growing positively by time. The biggest jump occured around the 1985, which agrees with my research of high record of U.S prisoners in the 1980s. Lastly, AAPI in total makes up the highest population, and comes in third is the high White jail population, which makes up 1/3 based on this chart visually. 
+
+
+### **Variable Comparison Chart:** _Scatterplot_
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+scatter_plot
+```
+
+This chart relfects the comparison of White jail poulation along the history. Accordingly to the line chart, the trend again is increasing overtime. The biggets jump also occured around 1985. From this chart it can be seen that as the years go by and come closer to the most recent years, there is an significant increase in jail population. These patterns are clearly demonstrated by a color encoding from bold to light to represent the accumulation over the years. 
